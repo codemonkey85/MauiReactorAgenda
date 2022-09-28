@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:MauiReactorAgenda.Pages"
+             xmlns:models="clr-namespace:MauiReactorAgenda.Models"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             x:Class="MauiReactorAgenda.Pages.MainPage"
+             x:DataType="pages:MainPageViewModel"
+             ios:Page.UseSafeArea="True"
+             Title="{Binding Title}">
+
+    <CollectionView BackgroundColor="Transparent"
+                            ItemsSource="{Binding AgendaItems}"
+                            SelectionMode="None">
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:AgendaItem">
+                <Label Text="{Binding Title}" />
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>
